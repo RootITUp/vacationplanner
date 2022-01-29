@@ -11,7 +11,7 @@ class CalendarMonth {
     var firstDayMonth = DateTime(selectedMonth.year, month, 1);
     int firstWeekdayInMonth = firstDayMonth.weekday;
     var lastDayInMonth =
-        DateTime(firstDayMonth.year, firstDayMonth.month + 1 , 0);
+        DateTime(firstDayMonth.year, firstDayMonth.month + 1, 0);
 
     int daysInMonth = lastDayInMonth.difference(firstDayMonth).inDays + 1;
 

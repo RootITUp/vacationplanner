@@ -6,7 +6,7 @@ class Holiday {
   Holiday(this.name, this.date, this.stateCode);
 
   Holiday.fromJson(Map<String, dynamic> json)
-      : name =json['name']  as String,
+      : name = json['name'] as String,
         date = DateTime.parse(json['date']),
         stateCode = json['stateCode'] as String;
 

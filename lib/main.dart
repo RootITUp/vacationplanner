@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
-import 'package:vacation_planner/calendar_month_creator.dart';
+import 'package:vacation_planner/libraries/states.dart';
 import 'package:vacation_planner/repositories/vacation_repository.dart';
 import 'package:vacation_planner/yearly_calender_widget.dart';
 
@@ -33,6 +35,15 @@ class MyApp extends StatelessWidget {
             )
           ],
           child: MaterialApp(
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: [
+              Locale('de', ''), // English, no country code
+              Locale('en', ''), // Spanish, no country code
+            ],
             title: 'Flutter Demo',
             theme: ThemeData(
               primaryColor: const Color(0xff06D6A0),
@@ -66,15 +77,76 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    initializeDateFormatting();
 
     context.read<VacationCubit>().loadVacations();
   }
+
+  var _states = States.values;
+  States _selectedState = States.NW;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: const Drawer(),
+        drawer: Drawer(
+          backgroundColor: Colors.white,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor:
+                      Theme.of(context).primaryColor.withOpacity(0.3),
+                  child: const Text(
+                    "R",
+                    style: const TextStyle(color: Colors.black),
+                    textScaleFactor: 2,
+                  ),
+                ),
+                accountEmail: null,
+                accountName: const Text(
+                  'Rafael',
+                  style: TextStyle(fontSize: 24.0),
+                ),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text("Dein Bundesland: ")),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            items: _states.map((state) {
+                              return DropdownMenuItem(
+                                  value: state,
+                                  child: Row(
+                                    children: <Widget>[
+                                      Text(state.toLongString()),
+                                    ],
+                                  ));
+                            }).toList(),
+                            onChanged: (States? newValue) {
+                              // do other stuff with _category
+                              setState(() => _selectedState = newValue!);
+                            },
+                            value: _selectedState,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            ],
+          ),
+        ),
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -107,9 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: YearlyCalendar(
-                year: 2022,
-              ),
+              child: YearlyCalendar(year: 2022, state: _selectedState),
             ),
           ],
         ),

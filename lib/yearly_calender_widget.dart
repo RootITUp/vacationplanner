@@ -7,11 +7,15 @@ import 'package:vacation_planner/models/holiday.dart';
 import 'package:vacation_planner/models/school_vacation.dart';
 
 import 'calendar_month_creator.dart';
+import 'libraries/states.dart';
 
 class YearlyCalendar extends StatelessWidget {
-  YearlyCalendar({Key? key, required this.year}) : super(key: key);
+  YearlyCalendar({Key? key, required this.year, required this.state})
+      : super(key: key);
   List<List<List<DateTime?>>> calendarMonthArray = [];
   final int year;
+
+  final States state;
 
   final List<String> weekdays = ["MO", "DI", "MI", "DO", "FR", "SA", "SO"];
 
@@ -37,9 +41,9 @@ class YearlyCalendar extends StatelessWidget {
                                         color: Colors.black, width: 0.2),
                                     color: Colors.greenAccent.withOpacity(0.5)),
                                 child: Center(
-                                  child: Text(DateFormat.MMMM().format(DateTime(
-                                      2022,
-                                      calendarMonthArray.indexOf(e) + 1))),
+                                  child: Text(DateFormat.MMMM('de').format(
+                                      DateTime(2022,
+                                          calendarMonthArray.indexOf(e) + 1))),
                                 )),
                             Table(children: [
                               TableRow(
@@ -93,14 +97,16 @@ class YearlyCalendar extends StatelessWidget {
   Color? getColor(DateTime e, List<Holiday> holidayList,
       List<SchoolVacation> schoolvacations) {
     var firstWhereHoliday = holidayList.firstWhere(
-        (element) => element.date.isSameDate(e) && element.stateCode == "NW",
+        (element) =>
+            element.date.isSameDate(e) &&
+            element.stateCode == state.toShortString(),
         orElse: () => Holiday("test", DateTime(2022, 1, 1), "BE"));
     var firstWhereSchoolvacations = schoolvacations.firstWhere(
         (element) =>
             e.isDateBetween(element.startDate, element.endDate) &&
-            element.stateCode == "NW",
-        orElse: () => SchoolVacation(
-            "test", DateTime(2022, 1, 1), DateTime(2022, 1, 1), "BE"));
+            element.stateCode == state.toShortString(),
+        orElse: () => SchoolVacation("test", DateTime(2022, 1, 1),
+            DateTime(2022, 1, 1), state.toShortString()));
 
     print(firstWhereSchoolvacations.startDate);
 
