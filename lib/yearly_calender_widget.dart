@@ -10,10 +10,19 @@ import 'calendar_month_creator.dart';
 import 'libraries/states.dart';
 
 class YearlyCalendar extends StatelessWidget {
-  YearlyCalendar({Key? key, required this.year, required this.state})
+  YearlyCalendar(
+      {Key? key,
+      required this.year,
+      required this.state,
+      required this.showHolidays,
+      required this.showVacations,
+      required this.numberColumns})
       : super(key: key);
   List<List<List<DateTime?>>> calendarMonthArray = [];
   final int year;
+  final bool showHolidays;
+  final bool showVacations;
+  final int numberColumns;
 
   final States state;
 
@@ -31,9 +40,12 @@ class YearlyCalendar extends StatelessWidget {
                 .map((e) => Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width / 2 - 20,
+                        width: (numberColumns == 1)
+                            ? MediaQuery.of(context).size.width / 1 - 20
+                            : MediaQuery.of(context).size.width / 2 - 20,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
                                 decoration: BoxDecoration(
@@ -45,44 +57,60 @@ class YearlyCalendar extends StatelessWidget {
                                       DateTime(2022,
                                           calendarMonthArray.indexOf(e) + 1))),
                                 )),
-                            Table(children: [
-                              TableRow(
-                                  children: weekdays
-                                      .map((e) => Container(
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Colors.black,
-                                                    width: 0.5),
-                                                color: Colors.greenAccent
-                                                    .withOpacity(0.2)),
-                                            child: Center(child: Text(e)),
-                                          ))
-                                      .toList()),
-                              ...e
-                                  .map((e) => TableRow(
-                                      children: e
-                                          .map(
-                                            (e) => (e != null)
-                                                ? Container(
-                                                    decoration: BoxDecoration(
-                                                        border: Border.all(
-                                                            color: Colors.black,
-                                                            width: 0.2),
-                                                        color: getColor(
-                                                            e,
-                                                            state.holidayList,
-                                                            state
-                                                                .vacationList)),
-                                                    child: Center(
-                                                      child: Text(
-                                                          e.day.toString()),
-                                                    ),
-                                                  )
-                                                : Container(),
-                                          )
-                                          .toList()))
-                                  .toList(),
-                            ]),
+                            Flexible(
+                              child: Table(children: [
+                                TableRow(
+                                    children: weekdays
+                                        .map((e) => Container(
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      color: Colors.black,
+                                                      width: 0.5),
+                                                  color: Colors.greenAccent
+                                                      .withOpacity(0.2)),
+                                              child: Center(child: Text(e)),
+                                            ))
+                                        .toList()),
+                                ...e
+                                    .map((e) => TableRow(
+                                        children: e
+                                            .map(
+                                              (e) => (e != null)
+                                                  ? Container(
+                                                      height: (numberColumns == 1)
+                                                          ? (MediaQuery.of(context)
+                                                                          .size
+                                                                          .height /
+                                                                      3 -
+                                                                  20) /
+                                                              7
+                                                          : (MediaQuery.of(context)
+                                                                          .size
+                                                                          .height /
+                                                                      5 -
+                                                                  20) /
+                                                              6,
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              color:
+                                                                  Colors.black,
+                                                              width: 0.2),
+                                                          color: getColor(
+                                                              e,
+                                                              state.holidayList,
+                                                              state
+                                                                  .vacationList)),
+                                                      child: Center(
+                                                        child: Text(
+                                                            e.day.toString()),
+                                                      ),
+                                                    )
+                                                  : Container(),
+                                            )
+                                            .toList()))
+                                    .toList(),
+                              ]),
+                            ),
                           ],
                         ),
                       ),
@@ -96,26 +124,33 @@ class YearlyCalendar extends StatelessWidget {
 
   Color? getColor(DateTime e, List<Holiday> holidayList,
       List<SchoolVacation> schoolvacations) {
-    var firstWhereHoliday = holidayList.firstWhere(
-        (element) =>
-            element.date.isSameDate(e) &&
-            element.stateCode == state.toShortString(),
-        orElse: () => Holiday("test", DateTime(2022, 1, 1), "BE"));
-    var firstWhereSchoolvacations = schoolvacations.firstWhere(
-        (element) =>
-            e.isDateBetween(element.startDate, element.endDate) &&
-            element.stateCode == state.toShortString(),
-        orElse: () => SchoolVacation("test", DateTime(2022, 1, 1),
-            DateTime(2022, 1, 1), state.toShortString()));
+    if (showHolidays) {
+      var firstWhereHoliday = holidayList.firstWhere(
+          (element) =>
+              element.date.isSameDate(e) &&
+              element.stateCode == state.toShortString(),
+          orElse: () => Holiday("test", DateTime(2022, 1, 1), "BE"));
 
-    print(firstWhereSchoolvacations.startDate);
+      if (e.isSameDate(firstWhereHoliday.date)) {
+        return Colors.red;
+      }
+    }
 
-    if (e.isSameDate(firstWhereHoliday.date)) {
-      return Colors.red;
-    } else if (e.isDateBetween(firstWhereSchoolvacations.startDate,
-        firstWhereSchoolvacations.endDate)) {
-      return Colors.blue.withOpacity(0.5);
-    } else if (e.weekday == 6) {
+    if (showVacations) {
+      var firstWhereSchoolvacations = schoolvacations.firstWhere(
+          (element) =>
+              e.isDateBetween(element.startDate, element.endDate) &&
+              element.stateCode == state.toShortString(),
+          orElse: () => SchoolVacation("test", DateTime(2022, 1, 1),
+              DateTime(2022, 1, 1), state.toShortString()));
+
+      if (e.isDateBetween(firstWhereSchoolvacations.startDate,
+          firstWhereSchoolvacations.endDate)) {
+        return Colors.blue.withOpacity(0.5);
+      }
+    }
+
+    if (e.weekday == 6) {
       return Colors.red.withOpacity(0.1);
     } else if (e.weekday == 7) {
       return Colors.red.withOpacity(0.2);

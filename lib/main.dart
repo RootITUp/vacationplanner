@@ -84,6 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var _states = States.values;
   States _selectedState = States.NW;
+  bool isShowHolidays = true;
+  bool isShowVacations = true;
 
   @override
   Widget build(BuildContext context) {
@@ -114,36 +116,73 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("Dein Bundesland: ")),
-                      Align(
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Align(
                         alignment: Alignment.centerLeft,
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton(
-                            items: _states.map((state) {
-                              return DropdownMenuItem(
-                                  value: state,
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(state.toLongString()),
-                                    ],
-                                  ));
-                            }).toList(),
-                            onChanged: (States? newValue) {
-                              // do other stuff with _category
-                              setState(() => _selectedState = newValue!);
-                            },
-                            value: _selectedState,
-                          ),
+                        child: Text("Dein Bundesland: ")),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton(
+                          items: _states.map((state) {
+                            return DropdownMenuItem(
+                                value: state,
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(state.toLongString()),
+                                  ],
+                                ));
+                          }).toList(),
+                          onChanged: (States? newValue) {
+                            // do other stuff with _category
+                            setState(() => _selectedState = newValue!);
+                          },
+                          value: _selectedState,
                         ),
                       ),
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Row(
+                  children: [
+                    const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Zeige Feiertage: ")),
+                    Checkbox(
+                      value: isShowHolidays,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isShowHolidays = newValue!;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Row(
+                  children: [
+                    const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Zeige Schulferien: ")),
+                    Checkbox(
+                      value: isShowVacations,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isShowVacations = newValue!;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -179,7 +218,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: YearlyCalendar(year: 2022, state: _selectedState),
+              child: GestureDetector(
+                onScaleStart: (details) => print("TEST"),
+                child: YearlyCalendar(
+                    year: 2022,
+                    state: _selectedState,
+                    showHolidays: isShowHolidays,
+                    showVacations: isShowVacations,
+                    numberColumns: 2),
+              ),
             ),
           ],
         ),
