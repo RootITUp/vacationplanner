@@ -1,0 +1,2429 @@
+{
+  "holidays": [
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-01-06",
+      "name": "Heilige Drei Könige"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-01-06",
+      "name": "Heilige Drei Könige"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-01-06",
+      "name": "Heilige Drei Könige"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-04-15",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-04-17",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-04-18",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-03-08",
+      "name": "Internationaler Frauentag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-05-26",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-06-05",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-06-06",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-06-16",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-06-16",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-06-16",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-06-16",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-06-16",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-06-16",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-08-15",
+      "name": "Mariä Himmelfahrt"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-11-16",
+      "name": "Buß und Bettag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2022-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-01-01",
+      "name": "Neujahr"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-01-06",
+      "name": "Heilige Drei Könige"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-01-06",
+      "name": "Heilige Drei Könige"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-01-06",
+      "name": "Heilige Drei Könige"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-04-07",
+      "name": "Karfreitag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-04-09",
+      "name": "Ostersonntag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-04-10",
+      "name": "Ostermontag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-03-08",
+      "name": "Internationaler Frauentag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-05-01",
+      "name": "Erster Mai"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-05-18",
+      "name": "Christi Himmelfahrt"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-05-28",
+      "name": "Pfingstsonntag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-05-29",
+      "name": "Pfingstmontag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-06-08",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-06-08",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-06-08",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-06-08",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-06-08",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-06-08",
+      "name": "Fronleichnam"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-08-15",
+      "name": "Mariä Himmelfahrt"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-10-31",
+      "name": "Reformationstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-11-22",
+      "name": "Buß und Bettag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-10-03",
+      "name": "Tag der deutschen Einheit"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-11-01",
+      "name": "Allerheiligen"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-12-25",
+      "name": "1. Weihnachtstag"
+    },
+    {
+      "state": "Baden-Württemberg",
+      "stateCode": "BW",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Bayern",
+      "stateCode": "BY",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Berlin",
+      "stateCode": "BE",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Brandenburg",
+      "stateCode": "BB",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Bremen",
+      "stateCode": "HB",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Hamburg",
+      "stateCode": "HH",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Hessen",
+      "stateCode": "HE",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Mecklenburg-Vorpommern",
+      "stateCode": "MV",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Niedersachsen",
+      "stateCode": "NI",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Nordrhein-Westfalen",
+      "stateCode": "NW",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Rheinland-Pfalz",
+      "stateCode": "RP",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Saarland",
+      "stateCode": "SL",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen",
+      "stateCode": "SN",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Sachsen-Anhalt",
+      "stateCode": "ST",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Schleswig-Holstein",
+      "stateCode": "SH",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    },
+    {
+      "state": "Thüringen",
+      "stateCode": "TH",
+      "date": "2023-12-26",
+      "name": "2. Weihnachtstag"
+    }
+  ]
+}
+
