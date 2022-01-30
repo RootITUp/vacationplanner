@@ -35,12 +35,12 @@ class MyApp extends StatelessWidget {
             )
           ],
           child: MaterialApp(
-            localizationsDelegates: [
+            localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            supportedLocales: [
+            supportedLocales: const [
               Locale('de', ''), // English, no country code
               Locale('en', ''), // Spanish, no country code
             ],
@@ -82,10 +82,11 @@ class _MyHomePageState extends State<MyHomePage> {
     context.read<VacationCubit>().loadVacations();
   }
 
-  var _states = States.values;
+  final _states = States.values;
   States _selectedState = States.NW;
   bool isShowHolidays = true;
   bool isShowVacations = true;
+  bool isZoomedIn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Theme.of(context).primaryColor.withOpacity(0.3),
                   child: const Text(
                     "R",
-                    style: const TextStyle(color: Colors.black),
+                    style: TextStyle(color: Colors.black),
                     textScaleFactor: 2,
                   ),
                 ),
@@ -148,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: 16),
                 child: Row(
                   children: [
                     const Align(
@@ -166,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: 16),
                 child: Row(
                   children: [
                     const Align(
@@ -219,13 +220,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SliverToBoxAdapter(
               child: GestureDetector(
-                onScaleStart: (details) => print("TEST"),
+                onDoubleTap: () => setState(() {
+                  isZoomedIn = !isZoomedIn;
+                }),
                 child: YearlyCalendar(
                     year: 2022,
-                    state: _selectedState,
+                    states: _selectedState,
                     showHolidays: isShowHolidays,
                     showVacations: isShowVacations,
-                    numberColumns: 2),
+                    numberColumns: isZoomedIn ? 1 : 2),
               ),
             ),
           ],
