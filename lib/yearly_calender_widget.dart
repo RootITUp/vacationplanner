@@ -6,7 +6,7 @@ import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/widgets/calendar_day_container.dart';
 
 import 'calendar_month_creator.dart';
-import 'libraries/states.dart';
+import 'consts/states.dart';
 
 class YearlyCalendar extends StatelessWidget {
   YearlyCalendar(
@@ -100,22 +100,5 @@ class YearlyCalendar extends StatelessWidget {
         return Container();
       }
     });
-  }
-}
-
-extension DateOnlyCompare on DateTime {
-  bool isSameDate(DateTime other) {
-    return year == other.year && month == other.month && day == other.day;
-  }
-}
-
-extension DateBetween on DateTime {
-  bool isDateBetween(DateTime start, DateTime end) {
-    if ((isSameDate(start) || isAfter(start)) &&
-        (isSameDate(end) || isBefore(end))) {
-      return true;
-    }
-
-    return false;
   }
 }

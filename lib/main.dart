@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
-import 'package:vacation_planner/libraries/states.dart';
+import 'package:vacation_planner/consts/states.dart';
 import 'package:vacation_planner/repositories/vacation_repository.dart';
 import 'package:vacation_planner/yearly_calender_widget.dart';
 
