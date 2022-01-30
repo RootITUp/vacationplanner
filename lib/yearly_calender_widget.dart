@@ -9,10 +9,11 @@ import 'calendar_month_creator.dart';
 import 'consts/states.dart';
 
 class YearlyCalendar extends StatelessWidget {
-  YearlyCalendar(
+  YearlyCalendar(this.updateHolidayDays,
       {Key? key,
       required this.year,
       required this.states,
+      required this.state,
       required this.showHolidays,
       required this.showVacations,
       required this.numberColumns})
@@ -22,7 +23,9 @@ class YearlyCalendar extends StatelessWidget {
   final bool showHolidays;
   final bool showVacations;
   final int numberColumns;
+  final VacationState state;
 
+  final Function updateHolidayDays;
   final States states;
 
   final List<String> weekdays = ["MO", "DI", "MI", "DO", "FR", "SA", "SO"];
@@ -42,7 +45,7 @@ class YearlyCalendar extends StatelessWidget {
                         width: (numberColumns == 1)
                             ? MediaQuery.of(context).size.width / 1 - 20
                             : MediaQuery.of(context).size.width / 2 - 20,
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           mainAxisSize: MainAxisSize.min,
@@ -77,13 +80,15 @@ class YearlyCalendar extends StatelessWidget {
                                             .map(
                                               (e) => (e != null)
                                                   ? CalendarDay(
+                                                      updateHolidayDays,
+                                                      state: state,
                                                       showHolidays:
                                                           showHolidays,
                                                       showVacations:
                                                           showVacations,
                                                       numberColumns:
                                                           numberColumns,
-                                                      state: states,
+                                                      states: states,
                                                       day: e)
                                                   : Container(),
                                             )

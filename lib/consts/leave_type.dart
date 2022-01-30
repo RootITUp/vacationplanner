@@ -1,5 +1,5 @@
 enum LeaveType {
-  NONE, //Normaler Tag
-  PAID_LEAVE, //Urlaubs Tag
-  FLEXIBLE, //Gleitzeit
+  none, //Normaler Tag
+  paidLeave, //Urlaubs Tag
+  flexible, //Gleitzeit
 }

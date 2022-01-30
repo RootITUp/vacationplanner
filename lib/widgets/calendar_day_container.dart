@@ -11,20 +11,23 @@ import 'package:vacation_planner/models/leave.dart';
 import 'package:vacation_planner/models/school_vacation.dart';
 
 class CalendarDay extends StatefulWidget {
-  CalendarDay(
+  const CalendarDay(this.updateHolidayDays,
       {Key? key,
       required this.showHolidays,
       required this.showVacations,
       required this.numberColumns,
       required this.state,
+      required this.states,
       required this.day})
       : super(key: key);
 
+  final VacationState state;
   final bool showHolidays;
   final bool showVacations;
   final int numberColumns;
-  final States state;
-  DateTime day;
+  final States states;
+  final Function updateHolidayDays;
+  final DateTime day;
 
   @override
   _CalendarDayState createState() => _CalendarDayState();
@@ -33,34 +36,30 @@ class CalendarDay extends StatefulWidget {
 class _CalendarDayState extends State<CalendarDay> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<VacationCubit, VacationState>(builder: (context, state) {
-      if (state is VacationLoadSuccess) {
-        return Listener(
-          onPointerDown: (PointerDownEvent event) {
-            setState(() {
-              context
-                  .read<VacationCubit>()
-                  .addLeave(widget.day, LeaveType.PAID_LEAVE);
-            });
-          },
-          child: AnimatedContainer(
-            duration: Duration(milliseconds: 200),
-            height: (widget.numberColumns == 1)
-                ? (MediaQuery.of(context).size.height / 3 - 20) / 7
-                : (MediaQuery.of(context).size.height / 5 - 20) / 6,
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 0.2),
-                color: getColor(widget.day, state.holidayList,
-                    state.vacationList, state.leaveList)),
-            child: Center(
-              child: Text(widget.day.day.toString()),
-            ),
-          ),
-        );
-      } else {
-        return Container();
-      }
-    });
+    return GestureDetector(
+      onTapDown: (details) {
+        setState(() {
+          context
+              .read<VacationCubit>()
+              .switchLeave(widget.day, LeaveType.paidLeave);
+
+          widget.updateHolidayDays;
+        });
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        height: (widget.numberColumns == 1)
+            ? (MediaQuery.of(context).size.height / 3 - 20) / 7
+            : (MediaQuery.of(context).size.height / 5 - 20) / 6,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black, width: 0.2),
+            color: getColor(widget.day, widget.state.holidayList,
+                widget.state.vacationList, widget.state.leaveList)),
+        child: Center(
+          child: Text(widget.day.day.toString()),
+        ),
+      ),
+    );
   }
 
   Color? getColor(DateTime e, List<Holiday> holidayList,
@@ -77,7 +76,7 @@ class _CalendarDayState extends State<CalendarDay> {
       if (e.isSameDate(holidayList
           .firstWhereOrNull((element) =>
               element.date.isSameDate(e) &&
-              element.stateCode == widget.state.toShortString())
+              element.stateCode == widget.states.toShortString())
           ?.date)) {
         return Colors.red;
       }
@@ -87,7 +86,7 @@ class _CalendarDayState extends State<CalendarDay> {
       var firstWhereSchoolvacations = schoolvacations.firstWhereOrNull(
         (element) =>
             e.isDateBetween(element.startDate, element.endDate) &&
-            element.stateCode == widget.state.toShortString(),
+            element.stateCode == widget.states.toShortString(),
       );
 
       if (e.isDateBetween(firstWhereSchoolvacations?.startDate,

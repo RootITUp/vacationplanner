@@ -1,4 +1,4 @@
-import 'package:collection/src/iterable_extensions.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
@@ -30,16 +30,15 @@ class VacationCubit extends Cubit<VacationState> {
         leaveList: leaveList));
   }
 
-  void addLeave(DateTime day, LeaveType type) {
+  void switchLeave(DateTime day, LeaveType type) {
     var leaveDays = _vacationRepository.getLeaveDays();
     var currentLeaveDay =
         leaveDays.firstWhereOrNull((element) => element.date.isSameDate(day));
 
     if (currentLeaveDay == null) {
-      _vacationRepository.getLeaveDays().add(Leave(day, type));
+      _vacationRepository.addLeaveDay(day, type);
     } else {
-      _vacationRepository.getLeaveDays().removeWhere(
-          (element) => element.date.isSameDate(currentLeaveDay.date));
+      _vacationRepository.removeLeaveDay(day, type);
     }
   }
 }

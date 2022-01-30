@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
+import 'package:vacation_planner/extensions/datetime_extensions.dart';
 import 'package:vacation_planner/models/holiday.dart';
 import 'package:vacation_planner/models/leave.dart';
 import 'package:vacation_planner/models/school_vacation.dart';
@@ -46,5 +47,9 @@ class VacationRepository {
 
   void addLeaveDay(DateTime day, LeaveType type) {
     localLeaveList.add(Leave(day, type));
+  }
+
+  void removeLeaveDay(DateTime day, LeaveType type) {
+    localLeaveList.removeWhere((element) => element.date.isSameDate(day));
   }
 }
