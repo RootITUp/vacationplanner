@@ -43,20 +43,27 @@ class _CalendarDayState extends State<CalendarDay> {
               .read<VacationCubit>()
               .switchLeave(widget.day, LeaveType.paidLeave);
 
-          widget.updateHolidayDays;
+          widget.updateHolidayDays();
         });
       },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        height: (widget.numberColumns == 1)
-            ? (MediaQuery.of(context).size.height / 3 - 20) / 7
-            : (MediaQuery.of(context).size.height / 5 - 20) / 6,
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 0.2),
-            color: getColor(widget.day, widget.state.holidayList,
-                widget.state.vacationList, widget.state.leaveList)),
-        child: Center(
-          child: Text(widget.day.day.toString()),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 2.0),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          height: (widget.numberColumns == 1)
+              ? (MediaQuery.of(context).size.height / 3 - 20) / 7
+              : (MediaQuery.of(context).size.height / 5 - 20) / 6,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: getColor(widget.day, widget.state.holidayList,
+                  widget.state.vacationList, widget.state.leaveList)),
+          child: Center(
+            child: Text(
+              widget.day.day.toString(),
+              textScaleFactor: 0.8,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
         ),
       ),
     );
@@ -69,7 +76,7 @@ class _CalendarDayState extends State<CalendarDay> {
           (element) => element.date.isSameDate(e),
         )
         ?.date)) {
-      return Colors.cyanAccent;
+      return Color(0xffeaac8b);
     }
 
     if (widget.showHolidays) {
@@ -78,7 +85,7 @@ class _CalendarDayState extends State<CalendarDay> {
               element.date.isSameDate(e) &&
               element.stateCode == widget.states.toShortString())
           ?.date)) {
-        return Colors.red;
+        return Color(0xffe56b6f);
       }
     }
 
@@ -91,16 +98,16 @@ class _CalendarDayState extends State<CalendarDay> {
 
       if (e.isDateBetween(firstWhereSchoolvacations?.startDate,
           firstWhereSchoolvacations?.endDate)) {
-        return Colors.blue.withOpacity(0.6);
+        return Color(0xffb56576).withOpacity(0.6);
       }
     }
 
     if (e.weekday == 6) {
-      return Colors.red.withOpacity(0.2);
+      return Color(0xffe56b6f).withOpacity(0.1);
     } else if (e.weekday == 7) {
-      return Colors.red.withOpacity(0.3);
+      return Color(0xffe56b6f).withOpacity(0.15);
     } else {
-      return null;
+      return Colors.white.withOpacity(0.1);
     }
   }
 }

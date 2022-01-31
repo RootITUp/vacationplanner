@@ -51,27 +51,25 @@ class YearlyCalendar extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.black, width: 0.2),
-                                    color: Colors.greenAccent.withOpacity(0.5)),
                                 child: Center(
-                                  child: Text(DateFormat.MMMM('de').format(
-                                      DateTime(2022,
-                                          calendarMonthArray.indexOf(e) + 1))),
-                                )),
+                              child: Text(
+                                DateFormat.MMMM('de')
+                                    .format(DateTime(2022,
+                                        calendarMonthArray.indexOf(e) + 1))
+                                    .toUpperCase(),
+                                textScaleFactor: 1.3,
+                              ),
+                            )),
                             Flexible(
                               child: Table(children: [
                                 TableRow(
                                     children: weekdays
                                         .map((e) => Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.5),
-                                                  color: Colors.greenAccent
-                                                      .withOpacity(0.2)),
-                                              child: Center(child: Text(e)),
+                                              child: Center(
+                                                  child: Text(
+                                                e,
+                                                textScaleFactor: 0.8,
+                                              )),
                                             ))
                                         .toList()),
                                 ...e
