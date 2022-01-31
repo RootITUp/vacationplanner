@@ -47,6 +47,9 @@ class MyApp extends StatelessWidget {
             ],
             title: 'Flutter Demo',
             theme: ThemeData(
+              primaryIconTheme: IconThemeData(
+                color: Colors.white,
+              ),
               primaryColor: const Color(0xff06D6A0),
               textTheme: GoogleFonts.poppinsTextTheme().apply(
                 bodyColor: Colors.white,
@@ -91,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int restPaidLeaveDays = 0;
 
   final _formKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             child: Scaffold(
+              key: _scaffoldKey,
               floatingActionButton: FloatingActionButton(
                 backgroundColor: Color(0xffeaac8b),
                 onPressed: () {
@@ -359,16 +364,31 @@ class _MyHomePageState extends State<MyHomePage> {
               body: CustomScrollView(
                 slivers: [
                   SliverAppBar(
+                    leading: IconButton(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      onPressed: () {
+                        _scaffoldKey.currentState!.openDrawer();
+                      },
+                    ),
+                    actionsIconTheme: IconThemeData(color: Colors.white),
                     actions: [
                       IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.zoom_out_outlined)),
+                          onPressed: () {
+                            setState(() {
+                              isZoomedIn = !isZoomedIn;
+                            });
+                          },
+                          icon: (isZoomedIn)
+                              ? Icon(
+                                  Icons.zoom_out_outlined,
+                                )
+                              : Icon(
+                                  Icons.zoom_in_outlined,
+                                )),
                       IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.zoom_in_outlined)),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.share_outlined))
+                          icon: const Icon(Icons.share_outlined,
+                              color: Colors.white))
                     ],
                     expandedHeight: 180,
                     //floating: true,

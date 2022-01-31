@@ -60,7 +60,7 @@ class _CalendarDayState extends State<CalendarDay> {
           child: Center(
             child: Text(
               widget.day.day.toString(),
-              textScaleFactor: 0.8,
+              textScaleFactor: (widget.numberColumns == 1) ? 1.0 : 0.8,
               style: TextStyle(color: Colors.white),
             ),
           ),
