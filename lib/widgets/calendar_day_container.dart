@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
@@ -9,6 +10,7 @@ import 'package:vacation_planner/extensions/datetime_extensions.dart';
 import 'package:vacation_planner/models/holiday.dart';
 import 'package:vacation_planner/models/leave.dart';
 import 'package:vacation_planner/models/school_vacation.dart';
+import 'package:vacation_planner/theme_provider.dart';
 
 class CalendarDay extends StatefulWidget {
   const CalendarDay(this.updateHolidayDays,
@@ -61,7 +63,11 @@ class _CalendarDayState extends State<CalendarDay> {
             child: Text(
               widget.day.day.toString(),
               textScaleFactor: (widget.numberColumns == 1) ? 1.0 : 0.8,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                  color: (Provider.of<ThemeProvider>(context).themeMode ==
+                          ThemeMode.dark)
+                      ? Colors.white
+                      : Colors.black),
             ),
           ),
         ),
@@ -107,7 +113,9 @@ class _CalendarDayState extends State<CalendarDay> {
     } else if (e.weekday == 7) {
       return Color(0xffe56b6f).withOpacity(0.15);
     } else {
-      return Colors.white.withOpacity(0.1);
+      return (Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark)
+          ? Colors.white.withOpacity(0.1)
+          : Color(0xFF355070).withOpacity(0.1);
     }
   }
 }

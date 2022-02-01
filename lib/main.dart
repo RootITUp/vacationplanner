@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:global_configuration/global_configuration.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:provider/provider.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/states.dart';
 import 'package:vacation_planner/repositories/vacation_repository.dart';
+import 'package:vacation_planner/theme_provider.dart';
+import 'package:vacation_planner/widgets/change_theme_button.dart';
 import 'package:vacation_planner/yearly_calender_widget.dart';
 
 void main() async {
@@ -35,34 +37,31 @@ class MyApp extends StatelessWidget {
                       RepositoryProvider.of<VacationRepository>(context)),
             )
           ],
-          child: MaterialApp(
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: const [
-              Locale('de', ''),
-              Locale('en', ''),
-            ],
-            title: 'Flutter Demo',
-            theme: ThemeData(
-              primaryIconTheme: IconThemeData(
-                color: Colors.white,
-              ),
-              primaryColor: const Color(0xff06D6A0),
-              textTheme: GoogleFonts.poppinsTextTheme().apply(
-                bodyColor: Colors.white,
-                displayColor: Colors.white,
-              ),
-              scaffoldBackgroundColor: Colors.transparent,
-              hintColor: Color(0xFF6d597a),
-              textSelectionTheme: TextSelectionTheme.of(context)
-                  .copyWith(selectionHandleColor: Color(0xFF6d597a)),
-            ),
-            locale: const Locale('de_DE'),
-            debugShowCheckedModeBanner: false,
-            home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          child: ChangeNotifierProvider(
+            builder: (context, _) {
+              final themeProvider = Provider.of<ThemeProvider>(context);
+              return MaterialApp(
+                localizationsDelegates: const [
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: const [
+                  Locale('de', ''),
+                  Locale('en', ''),
+                ],
+                title: 'Flutter Demo',
+                themeMode: themeProvider.themeMode,
+                theme: MyThemes.lightTheme,
+                darkTheme: MyThemes.darkTheme,
+                locale: const Locale('de_DE'),
+                debugShowCheckedModeBanner: false,
+                home: const MyHomePage(title: 'Flutter Demo Home Page'),
+              );
+            },
+            create: (BuildContext context) {
+              return ThemeProvider();
+            },
           ),
         ));
   }
@@ -106,11 +105,17 @@ class _MyHomePageState extends State<MyHomePage> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  const Color(0xFF355070),
-                  const Color(0xFF6d597a),
+                  (Provider.of<ThemeProvider>(context).themeMode ==
+                          ThemeMode.dark)
+                      ? Color(0xFF355070)
+                      : Colors.white,
+                  (Provider.of<ThemeProvider>(context).themeMode ==
+                          ThemeMode.dark)
+                      ? Color(0xFF6d597a)
+                      : Colors.white,
                 ],
-                begin: const FractionalOffset(1.0, 0.0),
-                end: const FractionalOffset(0.0, 1.0),
+                begin: FractionalOffset(1.0, 0.0),
+                end: FractionalOffset(0.0, 1.0),
               ),
             ),
             child: Scaffold(
@@ -123,7 +128,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     context: context,
                     builder: (context) {
                       return SimpleDialog(
-                        backgroundColor: Color(0xffeaac8b),
+                        backgroundColor:
+                            (Provider.of<ThemeProvider>(context).themeMode ==
+                                    ThemeMode.dark)
+                                ? Color(0xffeaac8b)
+                                : Colors.white,
                         title: const Text("Konfiguration"),
                         children: [
                           Form(
@@ -254,14 +263,23 @@ class _MyHomePageState extends State<MyHomePage> {
                           state.leaveList.length)
                       .toString(),
                   textScaleFactor: 2,
+                  style: TextStyle(
+                      color: (Provider.of<ThemeProvider>(context).themeMode ==
+                              ThemeMode.dark
+                          ? Colors.white
+                          : Colors.black)),
                 ),
               ),
               drawer: Drawer(
-                backgroundColor: Color(0xFF355070),
+                backgroundColor:
+                    (Provider.of<ThemeProvider>(context).themeMode ==
+                            ThemeMode.dark)
+                        ? Color(0xFF355070)
+                        : Colors.white,
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: [
-                    const UserAccountsDrawerHeader(
+                    UserAccountsDrawerHeader(
                       currentAccountPicture: CircleAvatar(
                         backgroundColor: Color(0xFF6d597a),
                         child: Text(
@@ -275,10 +293,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       accountEmail: null,
                       accountName: Text(
                         'Rafael',
-                        style: TextStyle(fontSize: 24.0, color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 24.0,
+                            color: (Provider.of<ThemeProvider>(context)
+                                        .themeMode ==
+                                    ThemeMode.dark)
+                                ? Colors.white
+                                : Colors.black),
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xFF355070),
+                        color: (Provider.of<ThemeProvider>(context).themeMode ==
+                                ThemeMode.dark)
+                            ? Color(0xFF355070)
+                            : Colors.white,
                       ),
                     ),
                     Padding(
@@ -293,26 +320,40 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: Alignment.centerLeft,
                             child: DropdownButtonHideUnderline(
                               child: DropdownButton(
-                                iconEnabledColor: Colors.white,
-                                dropdownColor: Color(0xFF6d597a),
+                                iconEnabledColor:
+                                    (Provider.of<ThemeProvider>(context)
+                                                .themeMode ==
+                                            ThemeMode.dark)
+                                        ? Colors.white
+                                        : Colors.black,
+                                dropdownColor:
+                                    (Provider.of<ThemeProvider>(context)
+                                                .themeMode ==
+                                            ThemeMode.dark)
+                                        ? Color(0xFF6d597a)
+                                        : Colors.white,
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: (Provider.of<ThemeProvider>(context)
+                                              .themeMode ==
+                                          ThemeMode.dark)
+                                      ? Colors.white
+                                      : Colors.black,
                                 ),
                                 items: _states.map((state) {
                                   return DropdownMenuItem(
-                                      value: state,
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          Text(
-                                            state.toLongString(),
-                                            textScaleFactor: 1.2,
-                                          ),
-                                        ],
-                                      ));
+                                    value: state,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        Text(
+                                          state.toLongString(),
+                                          textScaleFactor: 1.2,
+                                        ),
+                                      ],
+                                    ),
+                                  );
                                 }).toList(),
                                 onChanged: (States? newValue) {
-                                  // do other stuff with _category
                                   setState(() => _selectedState = newValue!);
                                 },
                                 value: _selectedState,
@@ -365,13 +406,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 slivers: [
                   SliverAppBar(
                     leading: IconButton(
-                      icon: Icon(Icons.menu, color: Colors.white),
+                      icon: Icon(Icons.menu,
+                          color:
+                              (Provider.of<ThemeProvider>(context).themeMode ==
+                                      ThemeMode.dark)
+                                  ? Colors.white
+                                  : Colors.black),
                       onPressed: () {
                         _scaffoldKey.currentState!.openDrawer();
                       },
                     ),
-                    actionsIconTheme: IconThemeData(color: Colors.white),
+                    actionsIconTheme: IconThemeData(
+                        color: (Provider.of<ThemeProvider>(context).themeMode ==
+                                ThemeMode.dark)
+                            ? Colors.white
+                            : Colors.black),
                     actions: [
+                      ChangeThemeButtonWidget(),
                       IconButton(
                           onPressed: () {
                             setState(() {
@@ -386,9 +437,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Icons.zoom_in_outlined,
                                 )),
                       IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.share_outlined,
-                              color: Colors.white))
+                        onPressed: () {},
+                        icon: Icon(Icons.share_outlined,
+                            color: (Provider.of<ThemeProvider>(context)
+                                        .themeMode ==
+                                    ThemeMode.dark)
+                                ? Colors.white
+                                : Colors.black),
+                      )
                     ],
                     expandedHeight: 180,
                     //floating: true,
