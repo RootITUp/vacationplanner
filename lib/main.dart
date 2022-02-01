@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int restPaidLeaveDays = 0;
 
   final _formKey = GlobalKey<FormState>();
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -107,21 +107,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 colors: [
                   (Provider.of<ThemeProvider>(context).themeMode ==
                           ThemeMode.dark)
-                      ? Color(0xFF355070)
+                      ? const Color(0xFF355070)
                       : Colors.white,
                   (Provider.of<ThemeProvider>(context).themeMode ==
                           ThemeMode.dark)
-                      ? Color(0xFF6d597a)
+                      ? const Color(0xFF6d597a)
                       : Colors.white,
                 ],
-                begin: FractionalOffset(1.0, 0.0),
-                end: FractionalOffset(0.0, 1.0),
+                begin: const FractionalOffset(1.0, 0.0),
+                end: const FractionalOffset(0.0, 1.0),
               ),
             ),
             child: Scaffold(
               key: _scaffoldKey,
               floatingActionButton: FloatingActionButton(
-                backgroundColor: Color(0xffeaac8b),
+                backgroundColor: const Color(0xffeaac8b),
                 onPressed: () {
                   setState(() {});
                   showDialog(
@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         backgroundColor:
                             (Provider.of<ThemeProvider>(context).themeMode ==
                                     ThemeMode.dark)
-                                ? Color(0xffeaac8b)
+                                ? const Color(0xffeaac8b)
                                 : Colors.white,
                         title: const Text("Konfiguration"),
                         children: [
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       child: Padding(
                                         padding: const EdgeInsets.all(16),
                                         child: TextFormField(
-                                          cursorColor: Color(0xFF6d597a),
+                                          cursorColor: const Color(0xFF6d597a),
                                           initialValue: GlobalConfiguration()
                                               .getValue("maxLeaveDays")
                                               .toString(),
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           },
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                               color: Color(0xFF6d597a),
                                             )),
                                             enabledBorder: OutlineInputBorder(
@@ -195,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           initialValue: 0.toString(),
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                               color: Color(0xFF6d597a),
                                             )),
                                             enabledBorder: OutlineInputBorder(
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     alignment: Alignment.bottomRight,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          primary: Color(0xFF6d597a)),
+                                          primary: const Color(0xFF6d597a)),
                                       onPressed: () {
                                         Navigator.pop(context);
                                         final form = _formKey.currentState;
@@ -274,13 +274,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor:
                     (Provider.of<ThemeProvider>(context).themeMode ==
                             ThemeMode.dark)
-                        ? Color(0xFF355070)
+                        ? const Color(0xFF355070)
                         : Colors.white,
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: [
                     UserAccountsDrawerHeader(
-                      currentAccountPicture: CircleAvatar(
+                      currentAccountPicture: const CircleAvatar(
                         backgroundColor: Color(0xFF6d597a),
                         child: Text(
                           "R",
@@ -304,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: BoxDecoration(
                         color: (Provider.of<ThemeProvider>(context).themeMode ==
                                 ThemeMode.dark)
-                            ? Color(0xFF355070)
+                            ? const Color(0xFF355070)
                             : Colors.white,
                       ),
                     ),
@@ -330,7 +330,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     (Provider.of<ThemeProvider>(context)
                                                 .themeMode ==
                                             ThemeMode.dark)
-                                        ? Color(0xFF6d597a)
+                                        ? const Color(0xFF6d597a)
                                         : Colors.white,
                                 style: TextStyle(
                                   color: (Provider.of<ThemeProvider>(context)
@@ -399,6 +399,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 16.0),
+                      child: ChangeThemeButtonWidget(),
+                    ),
                   ],
                 ),
               ),
@@ -422,7 +426,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             ? Colors.white
                             : Colors.black),
                     actions: [
-                      ChangeThemeButtonWidget(),
                       IconButton(
                           onPressed: () {
                             setState(() {
@@ -430,10 +433,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             });
                           },
                           icon: (isZoomedIn)
-                              ? Icon(
+                              ? const Icon(
                                   Icons.zoom_out_outlined,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.zoom_in_outlined,
                                 )),
                       IconButton(
@@ -449,7 +452,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     expandedHeight: 180,
                     //floating: true,
                     primary: true,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(16),
                             bottomRight: Radius.circular(16))),
