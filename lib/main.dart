@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,6 +7,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
+import 'package:vacation_planner/consts/leave_type.dart';
 import 'package:vacation_planner/consts/states.dart';
 import 'package:vacation_planner/repositories/vacation_repository.dart';
 import 'package:vacation_planner/theme_provider.dart';
@@ -101,6 +103,9 @@ class _MyHomePageState extends State<MyHomePage> {
       child:
           BlocBuilder<VacationCubit, VacationState>(builder: (context, state) {
         if (state is VacationLoadSuccess) {
+          var leaveListOnlyPaid = state.leaveList
+              .where((element) => element.type == LeaveType.paidLeave);
+
           return Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -131,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         backgroundColor:
                             (Provider.of<ThemeProvider>(context).themeMode ==
                                     ThemeMode.dark)
-                                ? const Color(0xffeaac8b)
+                                ? const Color(0xFF355070)
                                 : Colors.white,
                         title: const Text("Konfiguration"),
                         children: [
@@ -160,20 +165,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                              color: Color(0xFF6d597a),
+                                              color: Color(0xffeaac8b),
                                             )),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                  color: Color(0xFF6d597a)),
+                                                  color: Color(0xffeaac8b)),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                  color: Color(0xFF6d597a)),
+                                                  color: Color(0xffeaac8b)),
                                             ),
-                                            focusColor: Color(0xFF6d597a),
-                                            hoverColor: Color(0xFF6d597a),
+                                            focusColor: Color(0xffeaac8b),
+                                            hoverColor: Color(0xffeaac8b),
                                             labelStyle: TextStyle(
-                                                color: Color(0xFF6d597a)),
+                                                color: Color(0xffeaac8b)),
                                             label: Text("Urlaubstage"),
                                           ),
                                           onSaved: (newValue) => setState(() {
@@ -196,20 +201,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                              color: Color(0xFF6d597a),
+                                              color: Color(0xffeaac8b),
                                             )),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                  color: Color(0xFF6d597a)),
+                                                  color: Color(0xffeaac8b)),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                  color: Color(0xFF6d597a)),
+                                                  color: Color(0xffeaac8b)),
                                             ),
-                                            focusColor: Color(0xFF6d597a),
-                                            hoverColor: Color(0xFF6d597a),
+                                            focusColor: Color(0xffeaac8b),
+                                            hoverColor: Color(0xffeaac8b),
                                             labelStyle: TextStyle(
-                                                color: Color(0xFF6d597a)),
+                                                color: Color(0xffeaac8b)),
                                             label: Text("Rest-Urlaubstage"),
                                           ),
                                           validator: (value) {
@@ -260,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Text(
                   (GlobalConfiguration().getValue("maxLeaveDays") -
-                          state.leaveList.length)
+                          leaveListOnlyPaid.length)
                       .toString(),
                   textScaleFactor: 2,
                   style: TextStyle(
@@ -449,7 +454,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 : Colors.black),
                       )
                     ],
-                    expandedHeight: 180,
+                    expandedHeight: 150,
                     //floating: true,
                     primary: true,
                     shape: const RoundedRectangleBorder(
@@ -461,26 +466,30 @@ class _MyHomePageState extends State<MyHomePage> {
                     flexibleSpace: FlexibleSpaceBar(
                       background: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.only(
                                   left: 16, top: kToolbarHeight),
                               child: Text(
                                 "Hi, Rafa!",
-                                textScaleFactor: 2.5,
+                                textScaleFactor: 2,
+                                maxLines: 1,
                               ),
                             ),
                             Padding(
                               padding:
                                   const EdgeInsets.only(left: 16, right: 64),
-                              child: Text(
+                              child: AutoSizeText(
                                 "Für das Jahr 2022 verbleiben dir noch " +
                                     (GlobalConfiguration()
                                                 .getValue("maxLeaveDays") -
-                                            state.leaveList.length)
+                                            leaveListOnlyPaid.length)
                                         .toString() +
                                     " Urlaubstage.",
-                                textScaleFactor: 1.5,
+                                maxLines: 2,
+                                textScaleFactor: 1.2,
                               ),
                             ),
                           ]),

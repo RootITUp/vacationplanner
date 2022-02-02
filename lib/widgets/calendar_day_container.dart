@@ -39,11 +39,20 @@ class _CalendarDayState extends State<CalendarDay> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTapDown: (details) {
+      onTap: () {
         setState(() {
           context
               .read<VacationCubit>()
               .switchLeave(widget.day, LeaveType.paidLeave);
+
+          widget.updateHolidayDays();
+        });
+      },
+      onLongPress: () {
+        setState(() {
+          context
+              .read<VacationCubit>()
+              .switchLeave(widget.day, LeaveType.flexible);
 
           widget.updateHolidayDays();
         });
@@ -79,10 +88,18 @@ class _CalendarDayState extends State<CalendarDay> {
       List<SchoolVacation> schoolvacations, List<Leave> leaveList) {
     if (e.isSameDate(leaveList
         .firstWhereOrNull(
-          (element) => element.date.isSameDate(e),
+          (element) =>
+              element.date.isSameDate(e) && element.type == LeaveType.paidLeave,
         )
         ?.date)) {
-      return Color(0xffeaac8b);
+      return const Color(0xffeaac8b);
+    } else if (e.isSameDate(leaveList
+        .firstWhereOrNull(
+          (element) =>
+              element.date.isSameDate(e) && element.type == LeaveType.flexible,
+        )
+        ?.date)) {
+      return Color(0xffeaac8b).withRed(0);
     }
 
     if (widget.showHolidays) {
@@ -91,7 +108,7 @@ class _CalendarDayState extends State<CalendarDay> {
               element.date.isSameDate(e) &&
               element.stateCode == widget.states.toShortString())
           ?.date)) {
-        return Color(0xffe56b6f);
+        return const Color(0xffe56b6f);
       }
     }
 
@@ -104,18 +121,18 @@ class _CalendarDayState extends State<CalendarDay> {
 
       if (e.isDateBetween(firstWhereSchoolvacations?.startDate,
           firstWhereSchoolvacations?.endDate)) {
-        return Color(0xffb56576).withOpacity(0.6);
+        return const Color(0xffb56576).withOpacity(0.6);
       }
     }
 
     if (e.weekday == 6) {
-      return Color(0xffe56b6f).withOpacity(0.1);
+      return const Color(0xffe56b6f).withOpacity(0.1);
     } else if (e.weekday == 7) {
-      return Color(0xffe56b6f).withOpacity(0.15);
+      return const Color(0xffe56b6f).withOpacity(0.15);
     } else {
       return (Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark)
           ? Colors.white.withOpacity(0.1)
-          : Color(0xFF355070).withOpacity(0.1);
+          : const Color(0xFF355070).withOpacity(0.1);
     }
   }
 }

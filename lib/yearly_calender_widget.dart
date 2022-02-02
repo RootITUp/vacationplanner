@@ -66,14 +66,12 @@ class YearlyCalendar extends StatelessWidget {
                                 child: Table(children: [
                                   TableRow(
                                       children: weekdays
-                                          .map((e) => Container(
-                                                child: Center(
-                                                    child: Text(e,
-                                                        textScaleFactor:
-                                                            (numberColumns == 1)
-                                                                ? 1.0
-                                                                : 0.8)),
-                                              ))
+                                          .map((e) => Center(
+                                              child: Text(e,
+                                                  textScaleFactor:
+                                                      (numberColumns == 1)
+                                                          ? 1.0
+                                                          : 0.8)))
                                           .toList()),
                                   ...e
                                       .map((e) => TableRow(
@@ -88,7 +86,8 @@ class YearlyCalendar extends StatelessWidget {
                                                                 vertical: 4.0)
                                                             : const EdgeInsets
                                                                     .symmetric(
-                                                                vertical: 0.0),
+                                                                horizontal:
+                                                                    1.0),
                                                         child: CalendarDay(
                                                             updateHolidayDays,
                                                             state: state,

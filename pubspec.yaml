@@ -31,6 +31,8 @@ dependencies:
   global_configuration: ^2.0.0-nullsafety.1
 
   provider: ^6.0.2
+  flutter_launcher_icons: ^0.9.2
+  auto_size_text: ^3.0.0
 
 
 dev_dependencies:
@@ -38,6 +40,14 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^1.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "icons/icon.png"
+  adaptive_icon_background: "icons/background.png"
+  adaptive_icon_foreground: "icons/foreground.png"
+  remove_alpha_ios: true
 
 flutter:
 

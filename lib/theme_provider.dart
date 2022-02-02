@@ -16,21 +16,27 @@ class MyThemes {
   static final darkTheme = ThemeData(
     fontFamily: 'Poppins',
     scaffoldBackgroundColor: Colors.transparent,
-    unselectedWidgetColor: Color(0xFF6d597a),
+    unselectedWidgetColor: const Color(0xFF6d597a),
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.all(Color(0xFF6d597a)),
+      fillColor: MaterialStateProperty.all(const Color(0xFF6d597a)),
     ),
-    hintColor: Color(0xFF6d597a),
-    colorScheme: ColorScheme.dark(),
+    textSelectionTheme: const TextSelectionThemeData(
+      selectionHandleColor: Color(0xFF6d597a),
+    ),
+    hintColor: const Color(0xffeaac8b),
+    colorScheme: const ColorScheme.dark(),
   );
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     fontFamily: 'Poppins',
-    hintColor: Color(0xFF6d597a),
-    checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.all(Color(0xFF6d597a)),
+    hintColor: const Color(0xFF6d597a),
+    textSelectionTheme: const TextSelectionThemeData(
+      selectionHandleColor: Color(0xFF6d597a),
     ),
-    colorScheme: ColorScheme.light(),
+    checkboxTheme: CheckboxThemeData(
+      fillColor: MaterialStateProperty.all(const Color(0xFF6d597a)),
+    ),
+    colorScheme: const ColorScheme.light(),
   );
 }
