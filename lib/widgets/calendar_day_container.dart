@@ -99,7 +99,7 @@ class _CalendarDayState extends State<CalendarDay> {
               element.date.isSameDate(e) && element.type == LeaveType.flexible,
         )
         ?.date)) {
-      return Color(0xffeaac8b).withRed(0);
+      return const Color(0xffeaac8b).withRed(0);
     }
 
     if (widget.showHolidays) {

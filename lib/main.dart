@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
@@ -79,6 +80,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  final _states = States.values;
+  States _selectedState = States.NW;
+  bool isShowHolidays = true;
+  bool isShowVacations = true;
+  bool isZoomedIn = false;
+
+  int _leaveDays = 30;
+  int _restLeaveDays = 0;
+
+  final _formKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void initState() {
     super.initState();
@@ -86,23 +101,15 @@ class _MyHomePageState extends State<MyHomePage> {
     context.read<VacationCubit>().loadVacations();
   }
 
-  final _states = States.values;
-  States _selectedState = States.NW;
-  bool isShowHolidays = true;
-  bool isShowVacations = true;
-  bool isZoomedIn = false;
-  int paidLeaveDays = 30;
-  int restPaidLeaveDays = 0;
-
-  final _formKey = GlobalKey<FormState>();
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child:
           BlocBuilder<VacationCubit, VacationState>(builder: (context, state) {
         if (state is VacationLoadSuccess) {
+          _leaveDays = state.amountLeaveDays;
+          _restLeaveDays = state.amountRestLeaveDays;
+
           var leaveListOnlyPaid = state.leaveList
               .where((element) => element.type == LeaveType.paidLeave);
 
@@ -152,9 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                         padding: const EdgeInsets.all(16),
                                         child: TextFormField(
                                           cursorColor: const Color(0xFF6d597a),
-                                          initialValue: GlobalConfiguration()
-                                              .getValue("maxLeaveDays")
-                                              .toString(),
+                                          initialValue:
+                                              state.amountLeaveDays.toString(),
                                           validator: (value) {
                                             if (value == null ||
                                                 value.isEmpty) {
@@ -181,10 +187,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 color: Color(0xffeaac8b)),
                                             label: Text("Urlaubstage"),
                                           ),
-                                          onSaved: (newValue) => setState(() {
-                                            paidLeaveDays =
-                                                int.parse(newValue!);
-                                          }),
+                                          onSaved: (newValue) {
+                                            setState(() {
+                                              _leaveDays = int.parse(newValue!);
+                                              context
+                                                  .read<VacationCubit>()
+                                                  .saveHolidayDays(
+                                                      int.parse(newValue));
+                                            });
+                                          },
                                         ),
                                       ),
                                     ),
@@ -197,7 +208,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                       child: Padding(
                                         padding: const EdgeInsets.all(16),
                                         child: TextFormField(
-                                          initialValue: 0.toString(),
+                                          initialValue: state
+                                              .amountRestLeaveDays
+                                              .toString(),
                                           decoration: const InputDecoration(
                                             border: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -225,8 +238,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                             return null;
                                           },
                                           onSaved: (newValue) => setState(() {
-                                            restPaidLeaveDays =
+                                            _restLeaveDays =
                                                 int.parse(newValue!);
+                                            context
+                                                .read<VacationCubit>()
+                                                .saveRest(int.parse(newValue));
                                           }),
                                         ),
                                       ),
@@ -239,19 +255,25 @@ class _MyHomePageState extends State<MyHomePage> {
                                     alignment: Alignment.bottomRight,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          primary: const Color(0xFF6d597a)),
-                                      onPressed: () {
+                                        primary: const Color(0xFF6d597a),
+                                      ),
+                                      onPressed: () async {
                                         Navigator.pop(context);
                                         final form = _formKey.currentState;
                                         if (form!.validate()) {
                                           form.save();
-                                          GlobalConfiguration().updateValue(
-                                              "maxLeaveDays",
-                                              paidLeaveDays +
-                                                  restPaidLeaveDays);
+
+                                          context
+                                              .read<VacationCubit>()
+                                              .updateAmounts();
+
+                                          updateHolidayDays();
                                         }
                                       },
-                                      child: const Text("OK"),
+                                      child: const Text(
+                                        "OK",
+                                        style: (TextStyle(color: Colors.white)),
+                                      ),
                                     ),
                                   ),
                                 )
@@ -264,8 +286,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 child: Text(
-                  (GlobalConfiguration().getValue("maxLeaveDays") -
-                          leaveListOnlyPaid.length)
+                  (_leaveDays + _restLeaveDays - leaveListOnlyPaid.length)
                       .toString(),
                   textScaleFactor: 2,
                   style: TextStyle(
@@ -469,7 +490,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(
                                   left: 16, top: kToolbarHeight),
                               child: Text(
@@ -483,8 +504,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   const EdgeInsets.only(left: 16, right: 64),
                               child: AutoSizeText(
                                 "Für das Jahr 2022 verbleiben dir noch " +
-                                    (GlobalConfiguration()
-                                                .getValue("maxLeaveDays") -
+                                    (_leaveDays +
+                                            _restLeaveDays -
                                             leaveListOnlyPaid.length)
                                         .toString() +
                                     " Urlaubstage.",

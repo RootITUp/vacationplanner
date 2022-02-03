@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
+import 'package:vacation_planner/consts/states.dart';
 import 'package:vacation_planner/extensions/datetime_extensions.dart';
 import 'package:vacation_planner/models/holiday.dart';
 import 'package:vacation_planner/models/leave.dart';
@@ -19,15 +20,24 @@ class VacationCubit extends Cubit<VacationState> {
     late final List<Holiday> holidays;
     late final List<SchoolVacation> schoolvacations;
     late final List<Leave> leaveList;
+    late int amountLeaveDays;
+    late int amountRestLeaveDays;
+    late States selectedState;
 
     holidays = await _vacationRepository.getHolidays();
     schoolvacations = await _vacationRepository.getSchoolVacations();
     leaveList = _vacationRepository.getLeaveDays();
+    amountLeaveDays = await _vacationRepository.getAmountLeaveDays();
+    amountRestLeaveDays = await _vacationRepository.getAmountRestLeaveDays();
+    selectedState = States.NW;
 
     emit(VacationLoadSuccess(
         holidayList: holidays,
         vacationList: schoolvacations,
-        leaveList: leaveList));
+        leaveList: leaveList,
+        amountLeaveDays: amountLeaveDays,
+        amountRestLeaveDays: amountRestLeaveDays,
+        selectedState: States.NW));
   }
 
   void switchLeave(DateTime day, LeaveType type) {
@@ -40,5 +50,31 @@ class VacationCubit extends Cubit<VacationState> {
     } else {
       _vacationRepository.removeLeaveDay(day, type);
     }
+  }
+
+  Future<void> updateAmounts() async {
+    emit(VacationLoadInProgress(
+        leaveList: state.leaveList,
+        vacationList: state.vacationList,
+        holidayList: state.holidayList,
+        amountLeaveDays: state.amountLeaveDays,
+        amountRestLeaveDays: state.amountRestLeaveDays,
+        selectedState: state.selectedState));
+
+    emit(VacationLoadSuccess(
+        leaveList: state.leaveList,
+        vacationList: state.vacationList,
+        holidayList: state.holidayList,
+        amountLeaveDays: await _vacationRepository.getAmountLeaveDays(),
+        amountRestLeaveDays: await _vacationRepository.getAmountRestLeaveDays(),
+        selectedState: state.selectedState));
+  }
+
+  Future<void> saveHolidayDays(int days) async {
+    _vacationRepository.saveLeaveDays(days);
+  }
+
+  Future<void> saveRest(int days) async {
+    _vacationRepository.saveRestLeaveDays(days);
   }
 }
