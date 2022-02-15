@@ -43,20 +43,34 @@ class VacationRepository {
     return localList;
   }
 
-  List<Leave> getLeaveDays() {
+  Future<List<Leave>> getLeaveDays() async {
+    final SharedPreferences prefs = await _prefs;
+    localLeaveList.clear();
+
+    List<dynamic> userMap =
+        await jsonDecode(prefs.getString('localLeaveList')!);
+
+    for (var element in userMap) {
+      localLeaveList.add(Leave.fromJson(element));
+    }
+
     return localLeaveList;
   }
 
   void addLeaveDay(DateTime day, LeaveType type) async {
     final SharedPreferences prefs = await _prefs;
 
-    localLeaveList.add(Leave(day, type));
 
-    prefs.setString("localList", jsonEncode(localLeaveList));
+
+    prefs.remove("localLeaveList");
+    prefs.setString("localLeaveList", jsonEncode(localLeaveList));
   }
 
-  void removeLeaveDay(DateTime day, LeaveType type) {
+  void removeLeaveDay(DateTime day, LeaveType type) async {
+    final SharedPreferences prefs = await _prefs;
     localLeaveList.removeWhere((element) => element.date.isSameDate(day));
+
+    prefs.setString("localLeaveList", jsonEncode(localLeaveList));
   }
 
   Future<void> saveLeaveDays(int days) async {
@@ -67,6 +81,11 @@ class VacationRepository {
   Future<void> saveRestLeaveDays(int days) async {
     final SharedPreferences prefs = await _prefs;
     prefs.setInt('restPaidLeaveDays', days);
+  }
+
+  Future<void> init() async {
+    final SharedPreferences prefs = await _prefs;
+    prefs.setString("localLeaveList", jsonEncode(localLeaveList));
   }
 
   Future<int> getAmountLeaveDays() async {

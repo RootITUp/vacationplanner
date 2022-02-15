@@ -25,6 +25,7 @@ class CalendarMonth {
           return DateTime(firstDayMonth.year, firstDayMonth.month,
               firstDayMonth.day + currentCounter - firstWeekdayInMonth);
         }
+        return null;
       }, growable: false);
     }, growable: false);
   }

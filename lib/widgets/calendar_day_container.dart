@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
@@ -45,6 +45,8 @@ class _CalendarDayState extends State<CalendarDay> {
               .read<VacationCubit>()
               .switchLeave(widget.day, LeaveType.paidLeave);
 
+          context.read<VacationCubit>().updateAmounts();
+
           widget.updateHolidayDays();
         });
       },
@@ -54,31 +56,55 @@ class _CalendarDayState extends State<CalendarDay> {
               .read<VacationCubit>()
               .switchLeave(widget.day, LeaveType.flexible);
 
+          context.read<VacationCubit>().updateAmounts();
+
           widget.updateHolidayDays();
         });
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 2.0),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          height: (widget.numberColumns == 1)
-              ? (MediaQuery.of(context).size.height / 3 - 20) / 7
-              : (MediaQuery.of(context).size.height / 5 - 20) / 6,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: getColor(widget.day, widget.state.holidayList,
-                  widget.state.vacationList, widget.state.leaveList)),
-          child: Center(
-            child: Text(
-              widget.day.day.toString(),
-              textScaleFactor: (widget.numberColumns == 1) ? 1.0 : 0.8,
-              style: TextStyle(
-                  color: (Provider.of<ThemeProvider>(context).themeMode ==
-                          ThemeMode.dark)
-                      ? Colors.white
-                      : Colors.black),
+        child: Stack(
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              height: (widget.numberColumns == 1)
+                  ? (MediaQuery.of(context).size.height / 3 - 20) / 7
+                  : (MediaQuery.of(context).size.height / 5 - 20) / 6,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: getColor(widget.day, widget.state.holidayList,
+                      widget.state.vacationList, widget.state.leaveList)),
+              child: Center(
+                child: Text(
+                  widget.day.day.toString(),
+                  textScaleFactor: (widget.numberColumns == 1) ? 1.0 : 0.8,
+                  textAlign: TextAlign.center,
+                  textHeightBehavior:
+                      const TextHeightBehavior(applyHeightToLastDescent: true),
+                  style: TextStyle(
+                    color: (Provider.of<ThemeProvider>(context).themeMode ==
+                            ThemeMode.dark)
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                ),
+              ),
             ),
-          ),
+            if (widget.day.weekday == 1)
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  weekNumber(widget.day).toString(),
+                  textScaleFactor: (widget.numberColumns == 1) ? 0.6 : 0.5,
+                  style: TextStyle(
+                    color: (Provider.of<ThemeProvider>(context).themeMode ==
+                            ThemeMode.dark)
+                        ? Colors.white.withOpacity(0.7)
+                        : Colors.black.withOpacity(0.7),
+                  ),
+                ),
+              )
+          ],
         ),
       ),
     );
@@ -134,5 +160,22 @@ class _CalendarDayState extends State<CalendarDay> {
           ? Colors.white.withOpacity(0.1)
           : const Color(0xFF355070).withOpacity(0.1);
     }
+  }
+
+  int numOfWeeks(int year) {
+    DateTime dec28 = DateTime(year, 12, 28);
+    int dayOfDec28 = int.parse(DateFormat("D").format(dec28));
+    return ((dayOfDec28 - dec28.weekday + 10) / 7).floor();
+  }
+
+  int weekNumber(DateTime date) {
+    int dayOfYear = int.parse(DateFormat("D").format(date));
+    int woy = ((dayOfYear - date.weekday + 10) / 7).floor();
+    if (woy < 1) {
+      woy = numOfWeeks(date.year - 1);
+    } else if (woy > numOfWeeks(date.year)) {
+      woy = 1;
+    }
+    return woy;
   }
 }

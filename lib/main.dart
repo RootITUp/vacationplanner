@@ -5,7 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
@@ -80,7 +79,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   final _states = States.values;
   States _selectedState = States.NW;
