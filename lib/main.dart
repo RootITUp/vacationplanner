@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:global_configuration/global_configuration.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
@@ -14,9 +14,8 @@ import 'package:vacation_planner/theme_provider.dart';
 import 'package:vacation_planner/widgets/change_theme_button.dart';
 import 'package:vacation_planner/yearly_calender_widget.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await GlobalConfiguration().loadFromAsset("configs");
   runApp(const MyApp());
 }
 
@@ -79,9 +78,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final _states = States.values;
-  States _selectedState = States.NW;
+  late States _selectedState;
   bool isShowHolidays = true;
   bool isShowVacations = true;
   bool isZoomedIn = false;
@@ -91,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final _formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey genKey = GlobalKey();
 
   @override
   void initState() {
@@ -107,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
         if (state is VacationLoadSuccess) {
           _leaveDays = state.amountLeaveDays;
           _restLeaveDays = state.amountRestLeaveDays;
+          _selectedState = state.selectedState;
 
           var leaveListOnlyPaid = state.leaveList
               .where((element) => element.type == LeaveType.paidLeave);
@@ -378,7 +378,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                   );
                                 }).toList(),
                                 onChanged: (States? newValue) {
-                                  setState(() => _selectedState = newValue!);
+                                  setState(() {
+                                    context
+                                        .read<VacationCubit>()
+                                        .saveState(newValue!);
+
+                                    context
+                                        .read<VacationCubit>()
+                                        .updateAmounts();
+                                    _selectedState = newValue;
+                                  });
                                 },
                                 value: _selectedState,
                               ),
@@ -464,7 +473,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Icons.zoom_in_outlined,
                                 )),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          /* RenderRepaintBoundary boundary = genKey.currentContext.findRenderObject()!;
+                          ui.Image image = await boundary.toImage();
+                          final directory = (await getApplicationDocumentsDirectory()).path;
+                          ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+                          Uint8List pngBytes = byteData.buffer.asUint8List();
+                          File imgFile = File('$directory/photo.png');
+                          await imgFile.writeAsBytes(pngBytes);
+                          print(imgFile.path);*/
+
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) => Container(),
+                          );
+                        },
                         icon: Icon(Icons.share_outlined,
                             color: (Provider.of<ThemeProvider>(context)
                                         .themeMode ==
@@ -515,13 +538,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   SliverToBoxAdapter(
-                    child: YearlyCalendar(updateHolidayDays,
-                        state: state,
-                        year: 2022,
-                        states: _selectedState,
-                        showHolidays: isShowHolidays,
-                        showVacations: isShowVacations,
-                        numberColumns: isZoomedIn ? 1 : 2),
+                    child: RepaintBoundary(
+                      key: genKey,
+                      child: YearlyCalendar(updateHolidayDays,
+                          state: state,
+                          year: 2022,
+                          states: _selectedState,
+                          showHolidays: isShowHolidays,
+                          showVacations: isShowVacations,
+                          numberColumns: isZoomedIn ? 1 : 2),
+                    ),
                   ),
                 ],
               ),

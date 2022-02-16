@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
+import 'package:vacation_planner/consts/states.dart';
 import 'package:vacation_planner/extensions/datetime_extensions.dart';
 import 'package:vacation_planner/models/holiday.dart';
 import 'package:vacation_planner/models/leave.dart';
@@ -47,8 +48,12 @@ class VacationRepository {
     final SharedPreferences prefs = await _prefs;
     localLeaveList.clear();
 
-    List<dynamic> userMap =
-        await jsonDecode(prefs.getString('localLeaveList')!);
+    List<dynamic> userMap;
+    if (prefs.containsKey("localLeaveList")) {
+      userMap = await jsonDecode(prefs.getString('localLeaveList')!);
+    } else {
+      userMap = [];
+    }
 
     for (var element in userMap) {
       localLeaveList.add(Leave.fromJson(element));
@@ -57,10 +62,24 @@ class VacationRepository {
     return localLeaveList;
   }
 
+  Future<States> getSavedState() async {
+    final SharedPreferences prefs = await _prefs;
+
+    if (prefs.containsKey("selectedState")) {
+      int stateIndex = prefs.getInt('selectedState')!;
+      return States.values[stateIndex];
+    } else {
+      return States.NW;
+    }
+  }
+
   void addLeaveDay(DateTime day, LeaveType type) async {
     final SharedPreferences prefs = await _prefs;
 
-
+    if (localLeaveList.contains(Leave(day, type))) {
+    } else {
+      localLeaveList.add(Leave(day, type));
+    }
 
     prefs.remove("localLeaveList");
     prefs.setString("localLeaveList", jsonEncode(localLeaveList));
@@ -83,9 +102,9 @@ class VacationRepository {
     prefs.setInt('restPaidLeaveDays', days);
   }
 
-  Future<void> init() async {
+  Future<void> saveSelectedState(States state) async {
     final SharedPreferences prefs = await _prefs;
-    prefs.setString("localLeaveList", jsonEncode(localLeaveList));
+    prefs.setInt('selectedState', state.index);
   }
 
   Future<int> getAmountLeaveDays() async {

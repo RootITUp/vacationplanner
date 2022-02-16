@@ -53,12 +53,12 @@ class YearlyCalendar extends StatelessWidget {
                             children: [
                               Center(
                                 child: Text(
-                              DateFormat.MMMM('de')
-                                  .format(DateTime(2022,
-                                      calendarMonthArray.indexOf(e) + 1))
-                                  .toUpperCase(),
-                              textScaleFactor:
-                                  (numberColumns == 1) ? 1.6 : 1.3,
+                                  DateFormat.MMMM('de')
+                                      .format(DateTime(2022,
+                                          calendarMonthArray.indexOf(e) + 1))
+                                      .toUpperCase(),
+                                  textScaleFactor:
+                                      (numberColumns == 1) ? 1.6 : 1.3,
                                 ),
                               ),
                               Flexible(

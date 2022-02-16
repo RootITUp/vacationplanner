@@ -29,7 +29,7 @@ class VacationCubit extends Cubit<VacationState> {
     leaveList = await _vacationRepository.getLeaveDays();
     amountLeaveDays = await _vacationRepository.getAmountLeaveDays();
     amountRestLeaveDays = await _vacationRepository.getAmountRestLeaveDays();
-    selectedState = States.NW;
+    selectedState = await _vacationRepository.getSavedState();
 
     emit(VacationLoadSuccess(
         holidayList: holidays,
@@ -37,7 +37,7 @@ class VacationCubit extends Cubit<VacationState> {
         leaveList: leaveList,
         amountLeaveDays: amountLeaveDays,
         amountRestLeaveDays: amountRestLeaveDays,
-        selectedState: States.NW));
+        selectedState: selectedState));
   }
 
   void switchLeave(DateTime day, LeaveType type) async {
@@ -67,7 +67,7 @@ class VacationCubit extends Cubit<VacationState> {
         holidayList: state.holidayList,
         amountLeaveDays: await _vacationRepository.getAmountLeaveDays(),
         amountRestLeaveDays: await _vacationRepository.getAmountRestLeaveDays(),
-        selectedState: state.selectedState));
+        selectedState: await _vacationRepository.getSavedState()));
   }
 
   Future<void> saveHolidayDays(int days) async {
@@ -78,7 +78,7 @@ class VacationCubit extends Cubit<VacationState> {
     _vacationRepository.saveRestLeaveDays(days);
   }
 
-  Future<void> init() async {
-    _vacationRepository.init();
+  Future<void> saveState(States state) async {
+    _vacationRepository.saveSelectedState(state);
   }
 }

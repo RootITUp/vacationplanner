@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 enum States { BW, BY, BE, BB, HB, HH, HE, MV, NI, NW, RP, SL, SN, ST, SH, TH }
 
 extension StateString on States {
