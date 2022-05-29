@@ -1,10 +1,16 @@
+import 'dart:io';
+import 'dart:typed_data';
+import 'dart:ui';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_bloc.dart';
 import 'package:vacation_planner/blocs/vacation/vacation_state.dart';
 import 'package:vacation_planner/consts/leave_type.dart';
@@ -474,19 +480,50 @@ class _MyHomePageState extends State<MyHomePage> {
                                 )),
                       IconButton(
                         onPressed: () async {
-                          /* RenderRepaintBoundary boundary = genKey.currentContext.findRenderObject()!;
-                          ui.Image image = await boundary.toImage();
-                          final directory = (await getApplicationDocumentsDirectory()).path;
-                          ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-                          Uint8List pngBytes = byteData.buffer.asUint8List();
-                          File imgFile = File('$directory/photo.png');
-                          await imgFile.writeAsBytes(pngBytes);
-                          print(imgFile.path);*/
+                          RenderRepaintBoundary boundary = genKey.currentContext
+                              ?.findRenderObject() as RenderRepaintBoundary;
+                          var image = await boundary.toImage();
+                          final directory =
+                              (await getApplicationDocumentsDirectory()).path;
+                          var byteData = await image.toByteData(
+                              format: ImageByteFormat.png);
+                          Uint8List? pngBytes = byteData?.buffer.asUint8List();
+                          File imgFile = File('$directory/screenshot.png');
+                          imgFile.writeAsBytes(pngBytes!);
+
+                          print(imgFile.path);
 
                           showDialog(
-                            context: context,
-                            builder: (BuildContext context) => Container(),
-                          );
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text("Kalender teilen?"),
+                                  content: Container(
+                                    color: Colors.white,
+                                    child: Image.file(File(imgFile.path)),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () async {
+                                          final box = context.findRenderObject()
+                                              as RenderBox?;
+                                          await Share.shareFiles([imgFile.path],
+                                              sharePositionOrigin: box!
+                                                      .localToGlobal(
+                                                          Offset.zero) &
+                                                  box.size);
+                                        },
+                                        child: Text("Test")),
+                                    TextButton(
+                                        onPressed: () => null,
+                                        child: Text("Test2"))
+                                  ],
+                                );
+                              });
+
+                          /* final box = context.findRenderObject() as RenderBox?;
+                          await Share.shareFiles([imgFile.path],
+                              sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size);*/
                         },
                         icon: Icon(Icons.share_outlined,
                             color: (Provider.of<ThemeProvider>(context)

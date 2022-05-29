@@ -37,79 +37,82 @@ class YearlyCalendar extends StatelessWidget {
 
     return BlocBuilder<VacationCubit, VacationState>(builder: (context, state) {
       if (state is VacationLoadSuccess) {
-        return Center(
-          child: Wrap(
-              children: calendarMonthArray
-                  .map((e) => Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: AnimatedContainer(
-                          width: (numberColumns == 1)
-                              ? MediaQuery.of(context).size.width / 1 - 20
-                              : MediaQuery.of(context).size.width / 2 - 20,
-                          duration: const Duration(milliseconds: 200),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Center(
-                                child: Text(
-                                  DateFormat.MMMM('de')
-                                      .format(DateTime(2022,
-                                          calendarMonthArray.indexOf(e) + 1))
-                                      .toUpperCase(),
-                                  textScaleFactor:
-                                      (numberColumns == 1) ? 1.6 : 1.3,
+        return Container(
+          color: Colors.white,
+          child: Center(
+            child: Wrap(
+                children: calendarMonthArray
+                    .map((e) => Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: AnimatedContainer(
+                            width: (numberColumns == 1)
+                                ? MediaQuery.of(context).size.width / 1 - 20
+                                : MediaQuery.of(context).size.width / 2 - 20,
+                            duration: const Duration(milliseconds: 200),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Center(
+                                  child: Text(
+                                    DateFormat.MMMM('de')
+                                        .format(DateTime(2022,
+                                            calendarMonthArray.indexOf(e) + 1))
+                                        .toUpperCase(),
+                                    textScaleFactor:
+                                        (numberColumns == 1) ? 1.6 : 1.3,
+                                  ),
                                 ),
-                              ),
-                              Flexible(
-                                child: Table(children: [
-                                  TableRow(
-                                      children: weekdays
-                                          .map((e) => Center(
-                                              child: Text(e,
-                                                  textScaleFactor:
-                                                      (numberColumns == 1)
-                                                          ? 1.0
-                                                          : 0.8)))
-                                          .toList()),
-                                  ...e
-                                      .map((e) => TableRow(
-                                          children: e
-                                              .map(
-                                                (e) => (e != null)
-                                                    ? Padding(
-                                                        padding: (numberColumns ==
-                                                                1)
-                                                            ? const EdgeInsets
-                                                                    .symmetric(
-                                                                vertical: 4.0)
-                                                            : const EdgeInsets
-                                                                    .symmetric(
-                                                                horizontal:
-                                                                    1.0),
-                                                        child: CalendarDay(
-                                                            updateHolidayDays,
-                                                            state: state,
-                                                            showHolidays:
-                                                                showHolidays,
-                                                            showVacations:
-                                                                showVacations,
-                                                            numberColumns:
-                                                                numberColumns,
-                                                            states: states,
-                                                            day: e),
-                                                      )
-                                                    : Container(),
-                                              )
-                                              .toList()))
-                                      .toList(),
-                                ]),
-                              ),
-                            ],
+                                Flexible(
+                                  child: Table(children: [
+                                    TableRow(
+                                        children: weekdays
+                                            .map((e) => Center(
+                                                child: Text(e,
+                                                    textScaleFactor:
+                                                        (numberColumns == 1)
+                                                            ? 1.0
+                                                            : 0.8)))
+                                            .toList()),
+                                    ...e
+                                        .map((e) => TableRow(
+                                            children: e
+                                                .map(
+                                                  (e) => (e != null)
+                                                      ? Padding(
+                                                          padding: (numberColumns ==
+                                                                  1)
+                                                              ? const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 4.0)
+                                                              : const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      1.0),
+                                                          child: CalendarDay(
+                                                              updateHolidayDays,
+                                                              state: state,
+                                                              showHolidays:
+                                                                  showHolidays,
+                                                              showVacations:
+                                                                  showVacations,
+                                                              numberColumns:
+                                                                  numberColumns,
+                                                              states: states,
+                                                              day: e),
+                                                        )
+                                                      : Container(),
+                                                )
+                                                .toList()))
+                                        .toList(),
+                                  ]),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ))
-                  .toList()),
+                        ))
+                    .toList()),
+          ),
         );
       } else {
         return Container();
