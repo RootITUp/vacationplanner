@@ -17,7 +17,6 @@ import 'package:vacation_planner/consts/leave_type.dart';
 import 'package:vacation_planner/consts/states.dart';
 import 'package:vacation_planner/repositories/vacation_repository.dart';
 import 'package:vacation_planner/theme_provider.dart';
-import 'package:vacation_planner/widgets/change_theme_button.dart';
 import 'package:vacation_planner/yearly_calender_widget.dart';
 
 void main() {
@@ -438,10 +437,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     ),
-                    const Padding(
+                   /* const Padding(
                       padding: EdgeInsets.only(left: 16.0),
                       child: ChangeThemeButtonWidget(),
-                    ),
+                    ),*/
                   ],
                 ),
               ),
@@ -491,7 +490,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           File imgFile = File('$directory/screenshot.png');
                           imgFile.writeAsBytes(pngBytes!);
 
-                          print(imgFile.path);
 
                           showDialog(
                               context: context,
@@ -513,10 +511,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           Offset.zero) &
                                                   box.size);
                                         },
-                                        child: Text("Test")),
+                                        child: const Text("Test")),
                                     TextButton(
-                                        onPressed: () => null,
-                                        child: Text("Test2"))
+                                        onPressed: () {
+
+                                        },
+                                        child: const Text("Test2"))
                                   ],
                                 );
                               });
